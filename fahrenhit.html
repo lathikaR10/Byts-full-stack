@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fahrenheit to Celsius</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+             background-image: url(https://cdn.dribbble.com/userupload/20422661/file/original-36af32218c35639ad4fd021a5f80a991.gif);
+      background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(220, 236, 189, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            margin: 10px 0;
+            width: 80%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p#output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fahrenheit to Celsius</h1>
+        <label>Enter Fahrenheit:</label>
+        <input type="number" id="fInput" placeholder="Enter value">
+        <button onclick="convert()">Convert</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function convert() {
+            const f = document.getElementById("fInput").value;
+            const c = (f - 32) * 5 / 9;
+            document.getElementById("output").innerText = "Celsius: " + c.toFixed(2);
+        }
+    </script>
+</body>
+</html>

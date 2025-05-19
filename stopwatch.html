@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Counter</title>
+  <style>
+    body {
+     background-image: url(https://cdn.dribbble.com/userupload/20422661/file/original-36af32218c35639ad4fd021a5f80a991.gif);
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+     
+    }
+    #counter-box {
+      display: inline-block;
+      padding: 30px 50px;
+      border: 3px solid #333;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    #count {
+      font-size: 64px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: #222;
+      user-select: none;
+    }
+    button {
+      font-size: 18px;
+      padding: 12px 20px;
+      margin: 0 8px;
+      border: 2px solid #333;
+      border-radius: 6px;
+      background-color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="counter-box">
+    <div id="count">0</div>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+  </div>
+
+  <script>
+    let timer = null;
+    const count = document.getElementById('count');
+
+    function start() {
+      if (timer) return;
+      timer = setInterval(() => {
+        count.textContent = Number(count.textContent) + 1;
+      }, 1000);
+    }
+
+    function stop() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    function reset() {
+      stop();
+      count.textContent = '0';
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

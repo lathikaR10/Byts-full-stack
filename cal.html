@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simple Calculator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+     background-image: url(https://cdn.dribbble.com/userupload/20422661/file/original-36af32218c35639ad4fd021a5f80a991.gif);
+      background-size: cover;
+    text-align: center;
+    margin-top: 50px;
+  }
+  input {
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    text-align: right;
+    margin-bottom: 10px;
+      background-color: #a8d9c6;
+  }
+  button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    margin: 3px;
+  
+  }
+</style>
+</head>
+<body>
+  <h2>Simple Calculator</h2>
+  <input type="text" id="result" readonly />
+  <br />
+  <button onclick="appendValue('1')">1</button>
+  <button onclick="appendValue('2')">2</button>
+  <button onclick="appendValue('3')">3</button>
+  <button onclick="appendValue('+')">+</button>
+  <br />
+  <button onclick="appendValue('4')">4</button>
+  <button onclick="appendValue('5')">5</button>
+  <button onclick="appendValue('6')">6</button>
+  <button onclick="appendValue('-')">-</button>
+  <br />
+  <button onclick="appendValue('7')">7</button>
+  <button onclick="appendValue('8')">8</button>
+  <button onclick="appendValue('9')">9</button>
+  <button onclick="appendValue('/')">/</button>
+  <br />
+  <button onclick="appendValue('0')">0</button>
+  <button onclick="appendValue('*')">*</button>
+  <button onclick="calculate()">=</button>
+  <button onclick="clearResult()">C</button>
+
+  <script>
+    function appendValue(val) {
+      document.getElementById('result').value += val;
+    }
+    function calculate() {
+      try {
+        document.getElementById('result').value = eval(document.getElementById('result').value);
+      } catch {
+        document.getElementById('result').value = 'Error';
+      }
+    }
+    function clearResult() {
+      document.getElementById('result').value = '';
+    }
+  </script>
+</body>
+</html>
+
